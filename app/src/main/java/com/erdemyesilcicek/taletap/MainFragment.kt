@@ -33,14 +33,14 @@ class MainFragment : Fragment() {
 
     }
 
-    fun creatorButtonClicked(view: View){
+    public fun creatorButtonClicked(view: View){
         val generativeModel = GenerativeModel(
             modelName = "gemini-1.5-flash",
             // Access your API key as a Build Configuration variable (see "Set up your API key" above)
             apiKey = "AIzaSyB9EovNJ98Y86MbZOPyE8qdKfDOFRZphfE"
         )
 
-        val prompt = "Kısa ve anlamlı bir masal yaz. Masalda dilediğin karakterleri kullanabilirsin. Masalın sonunda hayatın anlamı ile ilgili bir ders verilsin veya korkunç bir son ile bitsin."
+        val prompt = "Kısa ve anlamlı bir masal yaz, maksimum 2 paragraf olsun. Masalda dilediğin karakterleri kullanabilirsin. Masalın sonunda hayatın anlamı ile ilgili bir ders verilsin veya korkunç bir son ile bitsin."
         MainScope().launch {
             val response = generativeModel.generateContent(prompt)
             //println(response.text)
