@@ -7,38 +7,34 @@
     android:background="@drawable/starwallpaper"
     tools:context=".MainFragment">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_margin="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/border"
+        android:fontFamily="@font/regular"
+        android:padding="20dp"
+        android:text="click the button to create a tale"
+        android:textAlignment="center"
+        android:textColor="@color/softOrange"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/softOrange"
-            android:text="click the button to create a tale"
-            android:layout_gravity="center"
-            android:textAlignment="center"
-            android:layout_margin="10dp"
-            android:fontFamily="@font/regular"
-            android:background="@drawable/border"
-            android:padding="20dp"/>
-
-        <Button
-            android:id="@+id/creatorButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:fontFamily="@font/regular"
-            android:backgroundTint="@color/softOrange"
-            android:onClick="creatorButtonClicked"
-            android:text="create a tale" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/creatorButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="@color/softOrange"
+        android:fontFamily="@font/regular"
+        android:onClick="creatorButtonClicked"
+        android:text="create a tale"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

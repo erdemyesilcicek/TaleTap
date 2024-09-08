@@ -40,7 +40,7 @@ class MainFragment : Fragment() {
             apiKey = "AIzaSyB9EovNJ98Y86MbZOPyE8qdKfDOFRZphfE"
         )
 
-        val prompt = "Kısa ve anlamlı bir masal yaz, maksimum 2 paragraf olsun. Masalda dilediğin karakterleri kullanabilirsin. Masalın sonunda hayatın anlamı ile ilgili bir ders verilsin veya korkunç bir son ile bitsin."
+        val prompt = "Write a short and meaningful tale, maximum 2 paragraphs. You can use any characters you want in the fairy tale. At the end of the tale, give a lesson about the meaning of life or let it end with a terrible ending."
         MainScope().launch {
             val response = generativeModel.generateContent(prompt)
             //println(response.text)
