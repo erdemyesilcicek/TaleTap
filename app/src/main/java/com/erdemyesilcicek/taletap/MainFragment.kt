@@ -29,21 +29,24 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.creatorButton.setOnClickListener { creatorButtonClicked(it) }
 
+    }
+
+    fun creatorButtonClicked(view: View){
         val generativeModel = GenerativeModel(
             modelName = "gemini-1.5-flash",
             // Access your API key as a Build Configuration variable (see "Set up your API key" above)
             apiKey = "AIzaSyB9EovNJ98Y86MbZOPyE8qdKfDOFRZphfE"
         )
 
-        val prompt = "merhaba."
+        val prompt = "Kısa ve anlamlı bir masal yaz. Masalda dilediğin karakterleri kullanabilirsin. Masalın sonunda hayatın anlamı ile ilgili bir ders verilsin veya korkunç bir son ile bitsin."
         MainScope().launch {
             val response = generativeModel.generateContent(prompt)
-            print(response.text)
+            //println(response.text)
             binding.textView.text = response.text
         }
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
